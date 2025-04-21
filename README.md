@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# Accessible UI Elements
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, accessible, and theme-aware collection of reusable UI components built with **React**, **TypeScript**, and **Tailwind CSS**.  
+The project showcases common interactive elements — built with accessibility and user experience in mind — and styled with smooth global transitions.
 
-Currently, two official plugins are available:
+[🌐 Live Demo](https://MomciloDordevic.github.io/accessible-ui-elements)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ♿ **Accessibility-first** approach (ARIA roles, keyboard navigation, etc.)
+- 🌙 **Dark mode** toggle with theme persistence
+- ⚡ Global **transitions** and animations for smoother UI interactions
+- 🧩 A wide range of components:
+  - Buttons
+  - Links
+  - Accordion
+  - Dropdown
+  - Modal
+  - Toggle
+  - Tabs
+  - Accessible Form
+  - Tooltip
+  - Toasts
+  - Range Slider
+  - Pagination
+  - Breadcrumbs
+  - Calendar
+  - Color Picker
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Inspiration 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project was created to explore accessible UI development using modern frontend tools.
+It's both a learning playground and a showcase of reusable components with a focus on inclusivity.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🚀 Tech Stack
+
+- **React** (with Hooks)
+- **TypeScript**
+- **Tailwind CSS**
+- **Vite** (for lightning-fast dev/build)
+- **gh-pages** (for deployment to GitHub Pages)
+
+---
+
+## 📦 Getting Started
+
+```bash
+git clone https://github.com/MomciloDordevic/accessible-ui-elements.git
+cd accessible-ui-elements
+npm install
+npm run dev

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, format, isSameMonth, isSameDay, addMonths, subMonths } from "date-fns";
 
 const Calendar = () => {
