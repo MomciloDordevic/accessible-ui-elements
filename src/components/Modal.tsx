@@ -11,6 +11,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
+  const previouslyFocusedElementRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -19,6 +21,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     };
 
     if (isOpen) {
+      previouslyFocusedElementRef.current = document.activeElement as HTMLElement | null;
+
       document.body.style.overflow = "hidden";
       closeButtonRef.current?.focus();
       window.addEventListener("keydown", handleKeyDown);
@@ -27,6 +31,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
+
+      if (isOpen) {
+        setTimeout(() => {
+          previouslyFocusedElementRef.current?.focus();
+        }, 0);
+      }
     };
   }, [isOpen, onClose]);
 
@@ -54,9 +64,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
             ✕
           </button>
         </div>
-        <div className="mt-4">
-          {children}
-        </div>
+        <div className="mt-4">{children}</div>
       </div>
     </div>
   );
